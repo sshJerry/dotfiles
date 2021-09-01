@@ -1,0 +1,77 @@
+Notes for NVIM:
+
+Useful:
+<H> Left			<J> Down	<K> Up		<L> Right
+<ESC> Normal Node		<:q!> quit / ! w/o save warning
+<i> Insert text on cursor	<a> append text after cursor	<A> Append text after LINE	
+<u> Undo			<U> Undo whole line		<Control-r> Redo
+<:wq> write / quit		<:w (Name)> Makes a new file with all contents of current
+<0> Moves cursor to start of line <$> Moves cursor to end of line
+<dd> Deletes whole line		<#dd> Deletes # of lines	<p> Put previously deleted text after the cursor
+<G> Move to bottom of file	<gg> Move to start of file	<##G> Move to ## line on file 
+<o> Opens line below cursor and placed in insert mode		<O> Opens line above cursor and placed in insert mode
+
+
+	-Deletion >> d is a delete operator of MOTION:
+	<x> Delete Character
+	<dw> Delete word
+	<d$> Delete to end of line
+	<d#w> Deletes # number of words 
+	
+	Yank:
+	<v> --> Highlight desired text --> <y> --> <p>
+
+Info:
+<Control-g> Show location in file and file status.
+
+Search:
+</> Searches FORWARD for phrase	 <?> Searches BACKWARD for phrase *NOTE: Just use / TBH
+	Example: </> --> type '<' --> <Enter>
+	n to search phrase again
+	N to search phrase again OPPSITE DIRECTION
+	<Control-o> Back to older positions
+	<Control-i> To newer positions
+
+	options:
+	(Ignore case) set ic / set noic	| Ignore upper/lower case when searching 
+	(hlsearch & incsearch) set hls is | Highlight all matching phrases & show partial matches for search phrase
+	(toggle value settings) set inv<option> | toggle an option
+	(remove highlighting of matches) :no<option> | switch an option off
+
+
+Substitute:
+<:s/(Current Word)/(New Word)/g>
+	:s only changed first occurrence of (Current Word)
+	/g FLAG means to substitute globally in line
+<:#,#s/(Current Word)(New Word)/g>
+	:#,#s Line numbers of range of lines where substitution is done
+<:%s/(Current Word)/(New Word)/gc>
+	:%s w/ /g Changes every occurrence in the whole file
+	:%s w/ /gc Find every occurrence and ask confirmaton to substitute
+
+Low Usage:
+<w> Moves cursor FORWARD start of line		<#w> Moves the cursor # words forward
+<e> Moves cursor FORWARD end of line 		<#e> Moves the cursor to end of # word
+<r-CHAR> replace the char at cursor with CHAR 	<R-CHAR> replace more than one char at cursor
+
+
+
+	-Change >> c is a chance operator of MOTION:
+	<ce> Deletes word and places user in Insert mode
+	<c$> Deletes line and places user in Insert mode
+
+	-Visual Seleciton >> v is a save part of file operator of MOTION
+	Start at any line --> <v> --> <:w (New file name)> <Enter>
+	<v> --> <:d> Deletes selected text
+	
+	-r >> r is to insert the contents of a file
+	<:r (Filename)>
+	<:r !ls> inserts output of command in file.
+
+	Paraenthese Search:
+	EXAMPLE:Somethin [  Something (Everything within{Nothing} )  ]
+	<%> To find matching ),], } and move cursor to it
+
+	Execute External Command:
+	:!ls Press <Enter> when done
+
