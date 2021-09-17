@@ -1,28 +1,33 @@
 Notes for NVIM:
 
+Smart:
+<ZQ> Force quit                     <ZZ> quit with saving
+<zz> current line middle of page    <zt> current line top of page
+<Shift {/}> up/down on code/document faster. 
+	-Deletion >> d is a delete operator of MOTION:
+<dd> Deletes whole line             <D> deletes to end of line      <dw> Delete Word    <x>Delete char     <d#w> Deletes # number of words      <d Shift {/}> Delete "paragraph
+<Control-d> Down half a page        <Control-u> Up half a page
+<:earlier xm> Go back x minutes in time
+<o> Opens line below cursor and placed in insert mode		<O> Opens line above cursor and placed in insert mode
+
+
 Useful:
 <H> Left			<J> Down	<K> Up		<L> Right
-<ESC> Normal Node		<:q!> quit / ! w/o save warning
-<i> Insert text on cursor	<a> append text after cursor	<A> Append text after LINE	
+<ESC> Normal Node		<:q!> quit / ! w/o save warning 
+<i> Insert text on cursor   <I> Insert text before LINE	<a> append text after cursor	<A> Append text after LINE	
 <u> Undo			<U> Undo whole line		<Control-r> Redo
 <:wq> write / quit		<:w (Name)> Makes a new file with all contents of current
 <0> Moves cursor to start of line <$> Moves cursor to end of line
 <dd> Deletes whole line		<#dd> Deletes # of lines	<p> Put previously deleted text after the cursor
 <G> Move to bottom of file	<gg> Move to start of file	<##G> Move to ## line on file 
-<o> Opens line below cursor and placed in insert mode		<O> Opens line above cursor and placed in insert mode
 
 
-	-Deletion >> d is a delete operator of MOTION:
-	<x> Delete Character
-	<dw> Delete word
-	<d$> Delete to end of line
-	<d#w> Deletes # number of words 
 	
 	Yank:
-	<v> --> Highlight desired text --> <y> --> <p>
+	<v> --> Highlight desired text --> <y> --> <p>      <yy> to yank line
 
 Info:
-<Control-g> Show location in file and file status.
+<Control-g> Show location in file and file status.  <##%> go to that percent of the file
 
 Search:
 </> Searches FORWARD for phrase	 <?> Searches BACKWARD for phrase *NOTE: Just use / TBH
@@ -62,7 +67,7 @@ Low Usage:
 
 	-Visual Seleciton >> v is a save part of file operator of MOTION
 	Start at any line --> <v> --> <:w (New file name)> <Enter>
-	<v> --> <:d> Deletes selected text
+	<v> --> <:d> Deletes selected text      <vip> selects a paragraph
 	
 	-r >> r is to insert the contents of a file
 	<:r (Filename)>
@@ -75,3 +80,8 @@ Low Usage:
 	Execute External Command:
 	:!ls Press <Enter> when done
 
+
+
+Search up:
+command norm
+command .
